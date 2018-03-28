@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d22031-3e0e-42e8-8598-7a7297cc0c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/geolocation.js" afterPath="$PROJECT_DIR$/routes/geolocation.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,8 +51,8 @@
       <file leaf-file-name="geolocation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -603,12 +602,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521016866312</updated>
       <workItem from="1521016888795" duration="16149000" />
-      <workItem from="1522211100543" duration="1218000" />
+      <workItem from="1522211100543" duration="1933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17367000" />
+    <option name="totallyTimeSpent" value="18082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -789,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
