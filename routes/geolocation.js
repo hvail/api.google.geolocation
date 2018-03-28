@@ -3,8 +3,8 @@
  */
 const key = process.env.GOOGLE_KEY || "AIzaSyBGCpcpnrwlRI1j24x7K1Mhui44XBLQ6co";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
-// const request = require('request').defaults({'proxy': 'http://127.0.0.1:2080'});
-const request = require('request');
+const request = require('request').defaults({'proxy': 'http://127.0.0.1:2080'});
+// const request = require('request');
 
 const express = require('express');
 const router = express.Router();
@@ -81,12 +81,12 @@ const getWIFILocation = function (wifi) {
 
 const search = function (req, res, next) {
     let {kk, base, rom} = req.query;
+    let ss = kk ? 1 : 2;
     getWIFILocation(_buildWifiBody(kk, base))
         .then(function (data) {
-            res.send(`[begin]1,${data.location.lat.toFixed(6)},${data.location.lng.toFixed(6)}[end]`)
+            res.send(`[begin]${ss},${data.location.lat.toFixed(6)},${data.location.lng.toFixed(6)}[end]`)
         })
         .catch(function (err) {
-            console.log(err);
             res.send(`[begin]0,0,0[end]`)
         });
 };
