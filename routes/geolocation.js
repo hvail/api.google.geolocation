@@ -4,27 +4,12 @@
 const key = process.env.GOOGLE_KEY || "AIzaSyBGCpcpnrwlRI1j24x7K1Mhui44XBLQ6co";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 let request = require('request');
-if (process.env.DATAAREA === "zh-cn") request = request.defaults({'proxy': 'http://127.0.0.1:2080'});
+if (process.env.DATAAREA === "zh-cn")
+    request = request.defaults({'proxy': 'http://127.0.0.1:2080'});
 // const request = require('request');
 
 const express = require('express');
 const router = express.Router();
-
-/** 有效性的测试 **/
-// let body = {
-//     considerIp: "false",
-//     wifiAccessPoints: [
-//         {
-//             macAddress: "d0:ee:07:1e:ff:d2"
-//         },
-//         {
-//             macAddress: "14:75:90:c5:b1:52"
-//         },
-//         {
-//             macAddress: "d0:ee:07:3a:bf:e0"
-//         }
-//     ]
-// };
 
 const _buildWifiBody = function (wifi, ct) {
     let rexWIFI = /(.*?)\*(.*?)\*(.*?)(\*|$)/g;
