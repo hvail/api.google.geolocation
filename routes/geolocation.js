@@ -4,8 +4,11 @@
 const key = process.env.GOOGLE_KEY || "AIzaSyBGCpcpnrwlRI1j24x7K1Mhui44XBLQ6co";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 let request = require('request');
+const redis = require('./../my_modules/redishelp');
 if (process.env.DATAAREA === "zh-cn")
     request = request.defaults({'proxy': 'http://127.0.0.1:2080'});
+
+
 // const request = require('request');
 
 const express = require('express');
@@ -68,9 +71,17 @@ const getWIFILocation = function (wifi) {
 const search = function (req, res, next) {
     let {kk, base, rom} = req.query;
     let ss = kk ? 1 : 2;
-    getWIFILocation(_buildWifiBody(kk, base))
+    let reqQuery = _buildWifiBody(kk, base);
+    getWIFILocation(reqQuery)
         .then(function (data) {
-            res.send(`[begin]${ss},${data.location.lat.toFixed(6)},${data.location.lng.toFixed(6)}[end]`)
+            let {lat, lng} = data.location;
+            let lbs = reqQuery.cellTowers[0];
+            res.status(200).send(`[begin]${ss},${lat.toFixed(6)},${lng.toFixed(6)}[end]`);
+            if (ss === 2) {
+                let key = `CT-${lbs.mobileCountryCode}`;
+                let mem = `ID-${lbs.cellId}-${lbs.locationAreaCode}`;
+                redis.GEOADD(key, lat, lng, mem);
+            }
         })
         .catch(function (err) {
             res.send(`[begin]0,0,0[end]`)
