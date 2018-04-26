@@ -9,6 +9,7 @@ if (process.env.DATAAREA === "zh-cn")
 // const request = require('request');
 
 const express = require('express');
+const util = require('./../my_modules/utils');
 const router = express.Router();
 
 const _buildWifiBody = function (wifi, ct) {
@@ -68,12 +69,31 @@ const getWIFILocation = function (wifi) {
 const search = function (req, res, next) {
     let {kk, base, rom} = req.query;
     let ss = kk ? 1 : 2;
-    getWIFILocation(_buildWifiBody(kk, base))
+    let reqObj = _buildWifiBody(kk, base);
+    let reqQ = {
+        wifi: reqObj.wifiAccessPoints,
+        cell: reqObj.cellTowers
+    };
+    getWIFILocation(reqObj)
         .then(function (data) {
+            let obj = {
+                id: rom,
+                timeticks: new Date().getTime(),
+                request: reqQ,
+                response: data
+            };
+            util.logger(JSON.stringify(obj));
             res.send(`[begin]${ss},${data.location.lat.toFixed(6)},${data.location.lng.toFixed(6)}[end]`)
         })
         .catch(function (err) {
-            res.send(`[begin]0,0,0[end]`)
+            let obj = {
+                id: rom,
+                timeticks: new Date().getTime(),
+                request: reqQ,
+                response: ""
+            };
+            util.logger(JSON.stringify(obj));
+            res.send(`[begin]0,0,0[end]`);
         });
 };
 
