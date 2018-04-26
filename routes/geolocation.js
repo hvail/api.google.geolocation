@@ -6,6 +6,7 @@ const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 let request = require('request');
 if (process.env.DATAAREA === "zh-cn")
     request = request.defaults({'proxy': 'http://127.0.0.1:2080'});
+
 // const request = require('request');
 
 const express = require('express');

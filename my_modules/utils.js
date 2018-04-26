@@ -8,7 +8,6 @@ let logger = log4js.getLogger();
 logger.level = 'info';
 
 router.logger = function (log) {
-    console.log(log);
     logger.info(log);
 };
 
