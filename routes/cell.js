@@ -42,7 +42,7 @@ const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-        if (!err && pos.length > 0)
+        if (!err && pos[0])
             res.send(cellRes(pos[0]));
         else
             res.send(200, "");
