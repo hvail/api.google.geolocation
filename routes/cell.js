@@ -25,6 +25,7 @@ const getCt = (req, res) => {
     let key = `${mcc}:${lac}-${cid}`;
     redis.geopos("CellTowerLocationHash", key, (err, pos) => {
         if (!err && pos.length > 0) {
+            console.log(pos[0]);
             _getTimeByLLC(pos[0][1], pos[0][0], function (data) {
                 let _tz = JSON.parse(data);
                 res.send({
