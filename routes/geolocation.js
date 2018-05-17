@@ -1,7 +1,7 @@
 /**
  * Created by hvail on 2018/3/14.
  */
-const key = process.env.GOOGLE_KEY || "AIzaSyBGCpcpnrwlRI1j24x7K1Mhui44XBLQ6co";
+const key = process.env.GOOGLE_KEY || "";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 let request = require('request');
 if (process.env.DATAAREA === "zh-cn")
