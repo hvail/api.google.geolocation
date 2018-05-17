@@ -20,7 +20,7 @@ const cellRes = (poi) => {
     }
 };
 
-const getCt = (req, res) => {
+const getTz = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     redis.geopos("CellTowerLocationHash", key, (err, pos) => {
@@ -34,11 +34,11 @@ const getCt = (req, res) => {
                 });
             });
         } else
-            res.send({})
+            res.send("")
     });
 };
 
-const getTz = (req, res) => {
+const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     redis.geopos("CellTowerLocationHash", key, (err, pos) => {
@@ -61,6 +61,6 @@ let _getTimeByLLC = function (lat, lng, cb) {
 router.get('/', fnOK);
 
 router.get('/q/:mcc/:mnc/:lac/:cid', getCt);
-router.get('/tz/:mcc/:mnc/:lac/:cid', getCt);
+router.get('/tz/:mcc/:mnc/:lac/:cid', getTz);
 
 module.exports = router;
