@@ -28,6 +28,10 @@ const cellRes = (poi) => {
     }
 };
 
+const collBuild = (geo) => {
+    return [geo.lat, geo.lng];
+}
+
 const _buildWifiBody = function (mcc, mnc, lac, cid) {
     let result = {considerIp: "false", wifiAccessPoints: [], cellTowers: []};
     result.cellTowers.push({
@@ -37,10 +41,11 @@ const _buildWifiBody = function (mcc, mnc, lac, cid) {
         mobileNetworkCode: mnc
     });
     apiUtil.PromisePost(url, result)
-        .then(msg => {
-            console.log(msg);
-            return msg;
-        });
+        .then(msg => (JSON.parse(msg)))
+        .then(obj => obj.location ? obj.location : null)
+        .catch(err => {
+            console.log(err);
+        })
 };
 
 const getTz = (req, res) => {
@@ -63,16 +68,23 @@ const getTz = (req, res) => {
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
-    if (!inChina) {
-        _buildWifiBody(mcc, mnc, lac, cid);
-    }
     let key = `${mcc}:${lac}-${cid}`;
-    redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-        if (!err && pos[0])
-            res.send(cellRes(pos[0]));
-        else
-            res.send(200, "");
-    });
+    if (!inChina) {
+        _buildWifiBody(mcc, mnc, lac, cid)
+            .then(obj => {
+                if (obj !== null) {
+                    console.log('添加到了基站数据库中');
+                    redis.geoadd(key, collBuild(obj));
+                }
+            })
+    } else {
+        redis.geopos("CellTowerLocationHash", key, (err, pos) => {
+            if (!err && pos[0])
+                res.send(cellRes(pos[0]));
+            else
+                res.send(200, "");
+        });
+    }
 };
 
 let _getTimeByLLC = function (lat, lng, cb) {
