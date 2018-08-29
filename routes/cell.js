@@ -43,6 +43,7 @@ const _buildWifiBody = function (mcc, mnc, lac, cid) {
     return apiUtil.PromisePost(url, result)
         .then(msg => {
             console.log(msg);
+            console.log(msg.location);
             console.log(JSON.parse(msg));
             return msg;
         })
