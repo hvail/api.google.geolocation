@@ -13,6 +13,7 @@ const apiBase = require('api-base-hvail');
 const apiUtil = apiBase.util;
 const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&location=%s,%s&timestamp=%s&ak=inl7EljWEdaPIiDKoTHM3Z7QGMOsGTDT";
 let inChina = false;
+const remoteUrl = "http://47.74.34.11:9999/cell/q";
 if (process.env.DATAAREA === "zh-cn") {
     inChina = true;
 }
@@ -82,8 +83,15 @@ const getCt = (req, res) => {
         redis.geopos("CellTowerLocationHash", key, (err, pos) => {
             if (!err && pos[0])
                 res.send(cellRes(pos[0]));
-            else
-                res.send(200, "");
+            else {
+                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+                apiUtil.PromiseGet(__url)
+                    .then(msg => res.send(200, msg))
+                    .catch(err => {
+                        console.log(err);
+                        res.send(200, "");
+                    });
+            }
         });
     }
 };
