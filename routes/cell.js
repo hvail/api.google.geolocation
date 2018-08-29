@@ -30,7 +30,7 @@ const cellRes = (poi) => {
 };
 
 const collBuild = (geo) => {
-    return [geo.lat, geo.lng];
+    return [geo.lng, geo.lat];
 }
 
 const _buildWifiBody = function (mcc, mnc, lac, cid) {
@@ -74,8 +74,8 @@ const getCt = (req, res) => {
             .then(obj => {
                 console.log(obj);
                 if (obj !== null) {
-                    console.log('添加到了基站数据库中');
-                    redis.zrem("CellTowerLocationHash", key);
+                    // console.log('添加到了基站数据库中');
+                    // redis.zrem("CellTowerLocationHash", key);
                     redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
                 }
