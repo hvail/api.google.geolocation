@@ -75,6 +75,7 @@ const getCt = (req, res) => {
                 console.log(obj);
                 if (obj !== null) {
                     console.log('添加到了基站数据库中');
+                    redis.zrem("CellTowerLocationHash", key);
                     redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
                 }
