@@ -40,7 +40,7 @@ const _buildWifiBody = function (mcc, mnc, lac, cid) {
         mobileCountryCode: mcc,
         mobileNetworkCode: mnc
     });
-    apiUtil.PromisePost(url, result)
+    return apiUtil.PromisePost(url, result)
         .then(msg => (JSON.parse(msg)))
         .then(obj => obj.location ? obj.location : null)
         .catch(err => {
