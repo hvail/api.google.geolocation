@@ -88,6 +88,7 @@ const getCt = (req, res) => {
                 apiUtil.PromiseGet(__url)
                     .then(msg => res.send(200, msg))
                     .catch(err => {
+                        console.log(__url);
                         console.log(err);
                         res.send(200, "");
                     });
