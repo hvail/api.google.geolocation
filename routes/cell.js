@@ -72,9 +72,11 @@ const getCt = (req, res) => {
     if (!inChina) {
         _buildWifiBody(mcc, mnc, lac, cid)
             .then(obj => {
+                console.log(obj);
                 if (obj !== null) {
                     console.log('添加到了基站数据库中');
                     redis.geoadd(key, collBuild(obj));
+                    res.send(cellRes(collBuild(obj)))
                 }
             })
     } else {
