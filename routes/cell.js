@@ -41,13 +41,6 @@ const _buildWifiBody = function (mcc, mnc, lac, cid) {
         mobileNetworkCode: mnc
     });
     return apiUtil.PromisePost(url, result)
-        .then(msg => {
-            console.log(msg);
-            console.log(msg.location);
-            // console.log(JSON.parse(msg));
-            return msg;
-        })
-        // .then(msg => (JSON.parse(msg)))
         .then(obj => obj.location ? obj.location : null)
         .catch(err => {
             console.log(err);
@@ -81,7 +74,7 @@ const getCt = (req, res) => {
                 console.log(obj);
                 if (obj !== null) {
                     console.log('添加到了基站数据库中');
-                    redis.geoadd(key, collBuild(obj));
+                    redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
                 }
             })
