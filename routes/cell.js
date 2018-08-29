@@ -87,7 +87,7 @@ const getCt = (req, res) => {
             else {
                 let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
                 apiUtil.PromiseGet(__url)
-                    .then(msg => res.send(200, msg))
+                    .then(msg => res.status(200).send(msg))
                     .catch(err => {
                         console.log(__url);
                         console.log(err);
