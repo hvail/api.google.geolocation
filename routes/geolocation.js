@@ -3,9 +3,14 @@
  */
 const key = process.env.GOOGLE_KEY || "";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
+const apiBase = require('api-base-hvail');
+const apiUtil = apiBase.util;
 let request = require('request');
-if (process.env.DATAAREA === "zh-cn")
+let inChina = false;
+if (process.env.DATAAREA === "zh-cn") {
+    inChina = true;
     request = request.defaults({'proxy': 'http://127.0.0.1:2080'});
+}
 
 const express = require('express');
 const util = require('./../my_modules/utils');

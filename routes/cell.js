@@ -1,13 +1,21 @@
 /***
  * Created by hvail on 2018/5/16.
  */
+const key = process.env.GOOGLE_KEY || "";
+const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 const express = require('express');
 const request = require('request');
 const util = require('util');
 const redis = require('./../my_modules/redishelp');
 const router = express.Router();
 const fnOK = (req, res) => res.send("OK");
+const apiBase = require('api-base-hvail');
+const apiUtil = apiBase.util;
 const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&location=%s,%s&timestamp=%s&ak=inl7EljWEdaPIiDKoTHM3Z7QGMOsGTDT";
+let inChina = false;
+if (process.env.DATAAREA === "zh-cn") {
+    inChina = true;
+}
 
 const cellRes = (poi) => {
     return {
@@ -18,6 +26,21 @@ const cellRes = (poi) => {
         "longitude": poi[0],
         "Signal": -85
     }
+};
+
+const _buildWifiBody = function (mcc, mnc, lac, cid) {
+    let result = {considerIp: "false", wifiAccessPoints: [], cellTowers: []};
+    result.cellTowers.push({
+        cellId: cid,
+        locationAreaCode: lac,
+        mobileCountryCode: mcc,
+        mobileNetworkCode: mnc
+    });
+    apiUtil.PromisePost(url, result)
+        .then(msg => {
+            console.log(msg);
+            return msg;
+        });
 };
 
 const getTz = (req, res) => {
@@ -40,6 +63,9 @@ const getTz = (req, res) => {
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
+    if (!inChina) {
+        _buildWifiBody(mcc, mnc, lac, cid);
+    }
     let key = `${mcc}:${lac}-${cid}`;
     redis.geopos("CellTowerLocationHash", key, (err, pos) => {
         if (!err && pos[0])
