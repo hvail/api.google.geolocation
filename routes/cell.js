@@ -82,6 +82,8 @@ const getCt = (req, res) => {
                     // redis.zrem("CellTowerLocationHash", key);
                     redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
+                } else {
+                    res.send("");
                 }
             })
     } else {
