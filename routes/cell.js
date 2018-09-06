@@ -13,7 +13,7 @@ const apiBase = require('api-base-hvail');
 const apiUtil = apiBase.util;
 const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&location=%s,%s&timestamp=%s&ak=inl7EljWEdaPIiDKoTHM3Z7QGMOsGTDT";
 let inChina = false;
-const remoteUrl = "http://47.74.35.242:9999/cell/q";
+const remoteUrl = "http://47.74.41.235:9999/cell/q";
 if (process.env.DATAAREA === "zh-cn") inChina = true;
 
 const cellRes = (poi) => {
