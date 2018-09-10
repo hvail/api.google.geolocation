@@ -75,10 +75,24 @@ const getTz = (req, res) => {
     });
 };
 
+
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
+
+    let _readRemoteCell = (mcc, mnc, lac, cid, wifi) => {
+        let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+        if (wifi) __url = __url + `?wifi=${wifi}`;
+        apiUtil.PromiseGet(__url)
+            .then(msg => res.status(200).send(msg))
+            .catch(err => {
+                console.log(__url);
+                console.log(err);
+                res.send(200, "");
+            });
+    };
+
     if (!inChina) {
         _buildWifiBody(mcc, mnc, lac, cid, wifi)
             .then(obj => {
@@ -90,22 +104,16 @@ const getCt = (req, res) => {
                 }
             })
     } else {
-        redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-            if (!err && pos[0])
-                res.send(cellRes(pos[0]));
-            else {
-                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
-                if (wifi) __url = __url + `?wifi=${wifi}`;
-                console.log(__url);
-                apiUtil.PromiseGet(__url)
-                    .then(msg => res.status(200).send(msg))
-                    .catch(err => {
-                        console.log(__url);
-                        console.log(err);
-                        res.send(200, "");
-                    });
-            }
-        });
+        if (wifi)
+            _readRemoteCell(mcc, mnc, lac, cid, wifi);
+        else
+            redis.geopos("CellTowerLocationHash", key, (err, pos) => {
+                if (!err && pos[0])
+                    res.send(cellRes(pos[0]));
+                else {
+                    _readRemoteCell(mcc, mnc, lac, cid, wifi);
+                }
+            });
     }
 };
 
