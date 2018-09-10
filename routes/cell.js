@@ -31,7 +31,7 @@ const collBuild = (geo) => {
     return [geo.lng, geo.lat];
 };
 
-const _buildWifiBody = function (mcc, mnc, lac, cid) {
+const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
     let result = {considerIp: "false", wifiAccessPoints: [], cellTowers: []};
     result.cellTowers.push({
         cellId: cid,
@@ -39,6 +39,13 @@ const _buildWifiBody = function (mcc, mnc, lac, cid) {
         mobileCountryCode: mcc,
         mobileNetworkCode: mnc
     });
+    if (wifi) {
+        let ws = wifi.split(",");
+        ws.forEach(w => {
+            console.log(w);
+            result.wifiAccessPoints.push({macAddress: w, signalStrength: -80, channel: 0});
+        });
+    }
     return apiUtil.PromisePost(url, result)
         .then(obj => {
             console.log(obj);
@@ -71,13 +78,11 @@ const getTz = (req, res) => {
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
-    if (!inChina) {
-        _buildWifiBody(mcc, mnc, lac, cid)
+    let {wifi} = req.query;
+    if (!inChina || !!wifi) {
+        _buildWifiBody(mcc, mnc, lac, cid, wifi)
             .then(obj => {
-                console.log(obj);
                 if (obj !== null) {
-                    // console.log('添加到了基站数据库中');
-                    // redis.zrem("CellTowerLocationHash", key);
                     redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
                 } else {
@@ -89,7 +94,8 @@ const getCt = (req, res) => {
             if (!err && pos[0])
                 res.send(cellRes(pos[0]));
             else {
-                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}?wifi=${wifi}`;
+                console.log(__url);
                 apiUtil.PromiseGet(__url)
                     .then(msg => res.status(200).send(msg))
                     .catch(err => {
