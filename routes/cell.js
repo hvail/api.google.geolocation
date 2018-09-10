@@ -79,7 +79,7 @@ const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
-    if (!inChina || !!wifi) {
+    if (!inChina) {
         _buildWifiBody(mcc, mnc, lac, cid, wifi)
             .then(obj => {
                 if (obj !== null) {
