@@ -94,7 +94,8 @@ const getCt = (req, res) => {
             if (!err && pos[0])
                 res.send(cellRes(pos[0]));
             else {
-                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}?wifi=${wifi}`;
+                let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+                if (wifi) __url = __url + `?wifi=${wifi}`;
                 console.log(__url);
                 apiUtil.PromiseGet(__url)
                     .then(msg => res.status(200).send(msg))
