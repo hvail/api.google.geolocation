@@ -49,7 +49,10 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
     return apiUtil.PromisePost(url, result)
         .then(obj => {
             console.log(obj);
-            return obj
+            if (obj.error) {
+                console.log(JSON.stringify(obj));
+            }
+            return obj;
         })
         .then(obj => obj.location ? obj.location : null)
         .catch(err => {
@@ -80,7 +83,6 @@ const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
-
     let _readRemoteCell = (mcc, mnc, lac, cid, wifi) => {
         let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
         if (wifi) __url = __url + `?wifi=${wifi}`;
