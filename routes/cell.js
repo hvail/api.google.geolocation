@@ -84,12 +84,12 @@ const getCt = (req, res) => {
         let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
         if (wifi) __url = __url + `?wifi=${wifi}`;
         apiUtil.PromiseGet(__url)
-            .then(msg => (console.log(msg) && (msg)))
+        // .then(msg => (console.log(msg) && (msg)))
             .then(msg => res.status(200).send(msg))
             .catch(err => {
-                // console.log(__url);
-                // console.log(err);
-                res.send(200, "");
+                console.log(__url);
+                console.log(err);
+                res.status(200).send("");
             });
     };
 
@@ -120,8 +120,8 @@ const getCt = (req, res) => {
                         if (!exists)
                             _readRemoteCell(mcc, mnc, lac, cid, wifi);
                         else {
-                            console.log(`${nKey} is exists : ${exists}`);
-                            res.send(200, "");
+                            // console.log(`${nKey} is exists : ${exists}`);
+                            res.status(200).send("");
                         }
                     });
                 }
