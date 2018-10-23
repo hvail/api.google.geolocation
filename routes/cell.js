@@ -119,7 +119,10 @@ const getCt = (req, res) => {
                     redis.exists(nKey, (err, exists) => {
                         if (!exists)
                             _readRemoteCell(mcc, mnc, lac, cid, wifi);
-                        else  console.log(`${nKey} is exists : ${exists}`);
+                        else {
+                            console.log(`${nKey} is exists : ${exists}`);
+                            res.send(200, "");
+                        }
                     });
                 }
             });
