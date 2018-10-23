@@ -48,16 +48,13 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
     }
     return apiUtil.PromisePost(url, result)
         .then(obj => {
-            console.log(obj);
-            if (obj.error) {
-                console.log(JSON.stringify(obj));
-            }
+            if (obj.error) console.log(JSON.stringify(obj));
             return obj;
         })
         .then(obj => obj.location ? obj.location : null)
         .catch(err => {
             console.log(err);
-        })
+        });
 };
 
 const getTz = (req, res) => {
@@ -87,10 +84,11 @@ const getCt = (req, res) => {
         let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
         if (wifi) __url = __url + `?wifi=${wifi}`;
         apiUtil.PromiseGet(__url)
+            .then(msg => (console.log(msg) && (msg)))
             .then(msg => res.status(200).send(msg))
             .catch(err => {
-                console.log(__url);
-                console.log(err);
+                // console.log(__url);
+                // console.log(err);
                 res.send(200, "");
             });
     };
@@ -102,6 +100,10 @@ const getCt = (req, res) => {
                     redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                     res.send(cellRes(collBuild(obj)))
                 } else {
+                    let key = `NOFIND_${mcc}:${lac}-${cid}`;
+                    redis.set(key, new Date().getTime() + "");
+                    redis.expire(key, 1800);
+                    redis.hset("FailTowerLocationHash", key, key);
                     res.send("");
                 }
             })
