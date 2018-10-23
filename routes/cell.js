@@ -117,9 +117,10 @@ const getCt = (req, res) => {
                 else {
                     let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
                     redis.exists(nKey, (err, exists) => {
-                        console.log(exists);
+                        if (!exists)
+                            _readRemoteCell(mcc, mnc, lac, cid, wifi);
+                        else  console.log(`${nKey} is exists : ${exists}`);
                     });
-                    _readRemoteCell(mcc, mnc, lac, cid, wifi);
                 }
             });
     }
