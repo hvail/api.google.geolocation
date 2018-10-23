@@ -48,7 +48,11 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
     }
     return apiUtil.PromisePost(url, result)
         .then(obj => {
-            if (obj.error) console.log(JSON.stringify(obj));
+            if (obj.error) {
+                console.log(url);
+                console.log(JSON.stringify(result));
+                console.log(JSON.stringify(obj));
+            }
             return obj;
         })
         .then(obj => obj.location ? obj.location : null)
