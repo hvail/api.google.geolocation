@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d22031-3e0e-42e8-8598-7a7297cc0c32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/logger-181023.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cell.js" afterPath="$PROJECT_DIR$/routes/cell.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,14 +48,14 @@
       <file leaf-file-name="cell.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="421">
+              <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
               <folding>
                 <element signature="e#760#940#0" expanded="false" />
                 <element signature="e#970#1004#0" expanded="false" />
                 <element signature="e#1066#1936#0" expanded="false" />
                 <element signature="e#1967#2499#0" expanded="false" />
-                <element signature="e#2959#4899#0" expanded="false" />
+                <element signature="e#2960#4900#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -156,8 +154,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/geolocation.js" />
         <option value="$PROJECT_DIR$/my_modules/redishelp.js" />
-        <option value="$PROJECT_DIR$/routes/cell.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/routes/cell.js" />
       </list>
     </option>
   </component>
@@ -901,12 +899,12 @@
       <workItem from="1536220892117" duration="941000" />
       <workItem from="1536572452704" duration="3880000" />
       <workItem from="1538108283392" duration="340000" />
-      <workItem from="1540182418902" duration="16019000" />
+      <workItem from="1540182418902" duration="16286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73496000" />
+    <option name="totallyTimeSpent" value="73763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1324,14 +1322,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="421">
+          <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
           <folding>
             <element signature="e#760#940#0" expanded="false" />
             <element signature="e#970#1004#0" expanded="false" />
             <element signature="e#1066#1936#0" expanded="false" />
             <element signature="e#1967#2499#0" expanded="false" />
-            <element signature="e#2959#4899#0" expanded="false" />
+            <element signature="e#2960#4900#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -83,7 +83,7 @@ const getTz = (req, res) => {
 const total = (req, res, next) => {
     let {dn} = req.params;
     let sumkey = `open_cell_total`, usekey = `open_cell_use_${dn}_${new Date().toDateString()}`;
-    redis.score(sumkey, dn, function (err, sum) {
+    redis.zscore(sumkey, dn, function (err, sum) {
         if (err) res.status(500).send(JSON.stringify(err));
         else if (sum < 0) res.status(404).send("404");
         else {
