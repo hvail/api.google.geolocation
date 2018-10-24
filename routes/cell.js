@@ -82,7 +82,7 @@ const getTz = (req, res) => {
 // 计费程序
 const total = (req, res, next) => {
     let {dn} = req.params;
-    let sumkey = `open_cell_total`, usekey = `open_cell_use_${dn}_${new Date().toDateString()}`;
+    let sumkey = `open_cell_total`, usekey = `open_cell_use_${dn}_${new Date().toLocaleDateString()}`;
     redis.zscore(sumkey, dn, function (err, sum) {
         if (err) res.status(500).send(JSON.stringify(err));
         else if (sum < 0) res.status(404).send("404");
@@ -92,6 +92,8 @@ const total = (req, res, next) => {
         }
     });
 };
+
+// console.log(new Date().toLocaleDateString());
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
