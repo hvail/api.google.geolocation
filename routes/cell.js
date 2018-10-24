@@ -87,7 +87,7 @@ const total = (req, res, next) => {
         if (err) res.status(500).send(JSON.stringify(err));
         else if (sum < 0) res.status(404).send("404");
         else {
-            redis.incr(usekey, 1, dn);
+            redis.incr(usekey);
             next();
         }
     });
