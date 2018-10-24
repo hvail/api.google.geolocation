@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d22031-3e0e-42e8-8598-7a7297cc0c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_modules/redishelp.js" afterPath="$PROJECT_DIR$/my_modules/redishelp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cell.js" afterPath="$PROJECT_DIR$/routes/cell.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -49,13 +48,13 @@
       <file leaf-file-name="cell.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/cell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="140" column="52" lean-forward="true" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
+            <state relative-caret-position="720">
+              <caret line="152" column="53" lean-forward="true" selection-start-line="152" selection-start-column="53" selection-end-line="152" selection-end-column="53" />
               <folding>
                 <element signature="e#760#940#0" expanded="false" />
                 <element signature="e#1066#1936#0" expanded="false" />
                 <element signature="e#1967#2499#0" expanded="false" />
-                <element signature="e#2582#4522#0" expanded="false" />
+                <element signature="e#2590#4530#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -894,12 +893,12 @@
       <workItem from="1536220892117" duration="941000" />
       <workItem from="1536572452704" duration="3880000" />
       <workItem from="1538108283392" duration="340000" />
-      <workItem from="1540182418902" duration="11536000" />
+      <workItem from="1540182418902" duration="11604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69013000" />
+    <option name="totallyTimeSpent" value="69081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1316,13 +1315,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="140" column="52" lean-forward="true" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
+        <state relative-caret-position="720">
+          <caret line="152" column="53" lean-forward="true" selection-start-line="152" selection-start-column="53" selection-end-line="152" selection-end-column="53" />
           <folding>
             <element signature="e#760#940#0" expanded="false" />
             <element signature="e#1066#1936#0" expanded="false" />
             <element signature="e#1967#2499#0" expanded="false" />
-            <element signature="e#2582#4522#0" expanded="false" />
+            <element signature="e#2590#4530#0" expanded="false" />
           </folding>
         </state>
       </provider>

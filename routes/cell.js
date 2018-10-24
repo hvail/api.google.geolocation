@@ -79,6 +79,7 @@ const getTz = (req, res) => {
     });
 };
 
+// 计费程序
 const total = (req, res, next) => {
     next();
 };
@@ -148,8 +149,8 @@ let _getTimeByLLC = function (lat, lng, cb) {
 router.get('/', fnOK);
 
 router.get('/q/:mcc/:mnc/:lac/:cid', getCt);
-router.get('/tz/:mcc/:mnc/:lac/:cid', getTz);
 router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', total);
-router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', getTz);
+router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', getCt);
+router.get('/tz/:mcc/:mnc/:lac/:cid', getTz);
 
 module.exports = router;
