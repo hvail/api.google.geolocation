@@ -32,7 +32,7 @@ const collBuild = (geo) => {
 };
 
 const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
-    let result = {considerIp: "false", wifiAccessPoints: [], cellTowers: []};
+    let result = {considerIp: "false", radioType: "gsm", wifiAccessPoints: [], cellTowers: []};
     result.cellTowers.push({
         cellId: cid,
         locationAreaCode: lac,
@@ -79,6 +79,9 @@ const getTz = (req, res) => {
     });
 };
 
+const total = (req, res, next) => {
+    next();
+};
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
@@ -146,5 +149,7 @@ router.get('/', fnOK);
 
 router.get('/q/:mcc/:mnc/:lac/:cid', getCt);
 router.get('/tz/:mcc/:mnc/:lac/:cid', getTz);
+router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', total);
+router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', getTz);
 
 module.exports = router;
