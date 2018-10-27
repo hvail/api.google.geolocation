@@ -17,11 +17,14 @@ const remoteUrl = "http://47.74.41.235:9999/cell/q";
 if (process.env.DATAAREA === "zh-cn") inChina = true;
 
 const _doTracker = (req, res, next) => {
-    let {MCC, MNC, LAC, CID} = req.body;
+    let {MCC, MNC, LAC, CID, Lng, Lat} = req.body;
     let key = `NOFIND_${MCC}:${LAC}-${CID}`;
     redis.exists(key, (err, result) => {
         if (result) {
+            let ckey = `${mcc}:${lac}-${cid}`;
+            redis.geoadd("CellTowerLocationHash", Lng, Lat, ckey);
             console.log(`${key} : ${result}`);
+            console.log(`${ckey} 添加成功`);
             console.log(JSON.stringify(req.body));
         }
     });
