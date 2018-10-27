@@ -16,6 +16,12 @@ let inChina = false;
 const remoteUrl = "http://47.74.41.235:9999/cell/q";
 if (process.env.DATAAREA === "zh-cn") inChina = true;
 
+const _doTracker = (req, res, next) => {
+    let body = req.body;
+    console.log(body);
+    res.send("1");
+};
+
 const cellRes = (poi) => {
     return {
         "Latitude": poi[1],
@@ -158,6 +164,9 @@ let _getTimeByLLC = function (lat, lng, cb) {
 
 /* GET users listing. */
 router.get('/', fnOK);
+
+// 处理GPS传上来的经纬度和基站值作为补充;
+router.post('/gps', _doTracker);
 
 router.get('/q/:mcc/:mnc/:lac/:cid', getCt);
 router.get('/dealer/:dn/:mcc/:mnc/:lac/:cid', total);
