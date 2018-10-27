@@ -21,7 +21,7 @@ const _doTracker = (req, res, next) => {
     let key = `NOFIND_${MCC}:${LAC}-${CID}`;
     redis.exists(key, (err, result) => {
         if (result) {
-            let ckey = `${mcc}:${lac}-${cid}`;
+            let ckey = `${MCC}:${LAC}-${CID}`;
             redis.geoadd("CellTowerLocationHash", Lng, Lat, ckey);
             console.log(`${key} : ${result}`);
             console.log(`${ckey} 添加成功`);
