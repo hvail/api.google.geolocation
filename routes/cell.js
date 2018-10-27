@@ -21,7 +21,7 @@ const _doTracker = (req, res, next) => {
     let key = `NOFIND_${MCC}:${LAC}-${CID}`;
     redis.exists(key, (err, result) => {
         if (result) {
-            console.log(key);
+            console.log(`${key} : ${result}`);
             console.log(JSON.stringify(req.body));
         }
     });
