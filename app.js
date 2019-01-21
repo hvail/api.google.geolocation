@@ -8,7 +8,6 @@ const log4js = require('log4js');
 const fs = require('fs');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
 const location = require('./routes/geolocation');
 const cell = require('./routes/cell');
 
@@ -39,7 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/location', location);
-app.use('/users', users);
 app.use('/cell', cell);
 
 // catch 404 and forward to error handler
