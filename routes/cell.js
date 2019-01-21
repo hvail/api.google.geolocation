@@ -119,7 +119,6 @@ const getCt = (req, res) => {
         let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
         if (wifi) __url = __url + `?wifi=${wifi}`;
         apiUtil.PromiseGet(__url)
-        // .then(msg => (console.log(msg) && (msg)))
             .then(msg => res.status(200).send(msg))
             .catch(err => {
                 console.log(__url);
