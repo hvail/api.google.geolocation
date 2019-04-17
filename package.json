@@ -6,17 +6,17 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "api-base-hvail": "^1.4.2",
+    "api-base-hvail": "^2.5.3",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "express": "^4.16.4",
     "hvail-redis": "^1.1.11",
     "jade": "~1.11.0",
     "log4js": "^2.5.3",
-    "morgan": "~1.9.0",
+    "morgan": "^1.9.1",
     "redis": "^2.8.0",
-    "request": "^2.85.0",
+    "request": "^2.88.0",
     "serve-favicon": "~2.4.5"
   }
 }

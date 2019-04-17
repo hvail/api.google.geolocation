@@ -12,22 +12,27 @@ const fnOK = (req, res) => res.send("OK");
 const apiBase = require('api-base-hvail');
 const apiUtil = apiBase.util;
 const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&location=%s,%s&timestamp=%s&ak=inl7EljWEdaPIiDKoTHM3Z7QGMOsGTDT";
+const ApiAMapWIFIUrl = "http://apilocate.amap.com/position?accesstype=1&imei=%s&smac=%s&mmac=%s&macs=%s&output=json&key=f332352aef4dd383836978546959d9cd&bts=%s";
+const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&imei=352315052834187&output=json&key=f332352aef4dd383836978546959d9cd&mcc=%s&mnc=%s&lac=%s&cid=%s&signal=-63&bts=%s";
+
+
 let inChina = false;
 const remoteUrl = "http://47.74.41.235:9999/cell/q";
 if (process.env.DATAAREA === "zh-cn") inChina = true;
 
 const _doTracker = (req, res, next) => {
-    let {MCC, MNC, LAC, CID, Lng, Lat} = req.body;
-    let key = `NOFIND_${MCC}:${LAC}-${CID}`;
-    redis.exists(key, (err, result) => {
-        if (result) {
-            let ckey = `${MCC}:${LAC}-${CID}`;
-            redis.geoadd("CellTowerLocationHash", Lng, Lat, ckey);
-            console.log(`${key} : ${result}`);
-            console.log(`${ckey} 添加成功`);
-            console.log(JSON.stringify(req.body));
-        }
-    });
+    // 暂时中止回收设备上传的基站位置
+    // let {MCC, MNC, LAC, CID, Lng, Lat} = req.body;
+    // let key = `NOFIND_${MCC}:${LAC}-${CID}`;
+    // redis.exists(key, (err, result) => {
+    //     if (result) {
+    //         let ckey = `${MCC}:${LAC}-${CID}`;
+    //         redis.geoadd("CellTowerLocationHash", Lng, Lat, ckey);
+    //         // console.log(`${key} : ${result}`);
+    //         // console.log(`${ckey} 添加成功`);
+    //         // console.log(JSON.stringify(req.body));
+    //     }
+    // });
     // console.log(body);
     res.send("1");
 };
@@ -109,23 +114,66 @@ const total = (req, res, next) => {
     });
 };
 
-// console.log(new Date().toLocaleDateString());
+let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
+    let ws = wifi.split(",");
+    let AMapUrl = util.format(ApiAMapWIFIUrl, ws[0], ws[1], ws[2], ws.join("|"), `${mcc},${mnc},${lac},${cid}`);
+    return apiUtil.PromiseGet(AMapUrl)
+        .then(JSON.parse)
+        .then(lbs => {
+            if (lbs.infocode === '10000') {
+                let ls = lbs.result.location.split(",");
+                return {
+                    "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
+                    "latitude": ls[1], "longitude": ls[0], "Signal": -85
+                };
+            } else {
+                return "";
+            }
+        })
+        .catch(err => {
+            console.log(AMapUrl);
+            console.log(err);
+            return "";
+        });
+};
+
+let _readRemoteCell = (mcc, mnc, lac, cid) => {
+    let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+    return apiUtil.PromiseGet(__url)
+        .catch(err => {
+            console.log(__url);
+            console.log(err);
+            return "";
+        });
+};
+
+// let _readRemoteCell = (mcc, mnc, lac, cid) => {
+//     let AMapUrl = util.format(ApiAMapCELLUrl, mcc, mnc, lac, cid, `${mcc},${mnc},${lac},${cid}`);
+//     return apiUtil.PromiseGet(AMapUrl)
+//         .then(JSON.parse)
+//         .then(lbs => {
+//             console.log(lbs);
+//             if (lbs.infocode === '10000') {
+//                 let ls = lbs.result.location.split(",");
+//                 return {
+//                     "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
+//                     "latitude": ls[1], "longitude": ls[0], "Signal": -85
+//                 };
+//             } else {
+//                 return "";
+//             }
+//         })
+//         .catch(err => {
+//             console.log(AMapUrl);
+//             console.log(err);
+//             return "";
+//         });
+// };
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
-    let _readRemoteCell = (mcc, mnc, lac, cid, wifi) => {
-        let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
-        if (wifi) __url = __url + `?wifi=${wifi}`;
-        apiUtil.PromiseGet(__url)
-            .then(msg => res.status(200).send(msg))
-            .catch(err => {
-                console.log(__url);
-                console.log(err);
-                res.status(200).send("");
-            });
-    };
 
     if (!inChina) {
         _buildWifiBody(mcc, mnc, lac, cid, wifi)
@@ -143,18 +191,19 @@ const getCt = (req, res) => {
             })
     } else {
         if (wifi)
-            _readRemoteCell(mcc, mnc, lac, cid, wifi);
+            _readRemoteWifi(mcc, mnc, lac, cid, wifi)
+                .then(result => res.send(result));
         else
+        // _readRemoteCell(mcc, mnc, lac, cid)
+        //     .then(result => res.send(result));
             redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-                if (!err && pos[0])
-                    res.send(cellRes(pos[0]));
+                if (!err && pos[0]) res.send(cellRes(pos[0]));
                 else {
                     let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
                     redis.exists(nKey, (err, exists) => {
                         if (!exists)
-                            _readRemoteCell(mcc, mnc, lac, cid, wifi);
+                            _readRemoteCell(mcc, mnc, lac, cid).then(msg => res.send(msg));
                         else {
-                            // console.log(`${nKey} is exists : ${exists}`);
                             res.status(200).send("");
                         }
                     });

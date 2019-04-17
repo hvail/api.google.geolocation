@@ -2,9 +2,13 @@
  * Created by hvail on 2018/3/14.
  */
 const key = process.env.GOOGLE_KEY || "";
+const AMapKey = process.env.GAODE_KEY || "4b9b46550e3d6f82217f0ab3d403569a";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
 const apiBase = require('api-base-hvail');
 const apiUtil = apiBase.util;
+
+const ApiAMapUrl = `http://apilocate.amap.com/position?accesstype=1&imei=%s&smac=%s&mmac=%s&macs=%s&output=xml&key=${AMapKey}`;
+
 let request = require('request');
 let inChina = false;
 if (process.env.DATAAREA === "zh-cn") {
@@ -43,7 +47,11 @@ const _buildWifiBody = function (wifi, ct) {
 };
 
 const getWIFILocation = function (wifi) {
+    console.log(wifi);
     return new Promise(function (resolve, reject) {
+        let _url = ApiAMapUrl.format("");
+        console.log(_url);
+
         request({url: url, method: "POST", json: wifi}, function (err, response, body) {
             if (err) {
                 reject(err);

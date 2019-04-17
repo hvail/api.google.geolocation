@@ -12,7 +12,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8080');
+// var port = normalizePort(process.env.PORT || '8080');
+var port = 3100;
 app.set('port', port);
 
 /**
@@ -54,13 +55,12 @@ function normalizePort(val) {
  */
 
 function onError(error) {
+    console.log('onError ');
     if (error.syscall !== 'listen') {
         throw error;
     }
 
-    var bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
@@ -77,14 +77,13 @@ function onError(error) {
     }
 }
 
-/**
+/***
  * Event listener for HTTP server "listening" event.
- */
-
+ **/
 function onListening() {
+    console.log('onListening ');
     var addr = server.address();
-    var bind = typeof addr === 'string'
-        ? 'pipe ' + addr
-        : 'port ' + addr.port;
+    var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    console.log('Listening on ' + bind);
     debug('Listening on ' + bind);
 }
