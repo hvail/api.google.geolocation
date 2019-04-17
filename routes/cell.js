@@ -122,11 +122,13 @@ let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
         .then(lbs => {
             if (lbs.infocode === '10000') {
                 let ls = lbs.result.location.split(",");
+                ls = console.log(offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1}));
                 let result = {
-                    "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
-                    "latitude": ls[1], "longitude": ls[0], "Signal": -85
+                    "Latitude": ls[1].toFixed(6), "Longitude": ls[0].toFixed(6), "Range": lbs.result.radius,
+                    "latitude": ls[1].toFixed(6), "longitude": ls[0].toFixed(6), "Signal": -85
                 };
-                console.log(offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1}));
+                console.log(result);
+                return result;
             } else {
                 return "";
             }
