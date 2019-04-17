@@ -120,7 +120,8 @@ let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
     return apiUtil.PromiseGet(AMapUrl)
         .then(JSON.parse)
         .then(lbs => {
-            if (lbs.infocode === '10000') {
+            if (lbs.infocode === '10000' && lbs.result.type * 1 > 0) {
+                console.log(JSON.stringify(lbs.result));
                 let ls = lbs.result.location.split(",");
                 ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
                 let result = {
