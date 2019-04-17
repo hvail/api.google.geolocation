@@ -117,6 +117,7 @@ const total = (req, res, next) => {
 let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
     let ws = wifi.split(",");
     let AMapUrl = util.format(ApiAMapWIFIUrl, ws[0], ws[1], ws[2], ws.join("|"), `${mcc},${mnc},${lac},${cid}`);
+    console.log(AMapUrl);
     return apiUtil.PromiseGet(AMapUrl)
         .then(JSON.parse)
         .then(lbs => {
