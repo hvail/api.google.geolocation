@@ -2,6 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d22031-3e0e-42e8-8598-7a7297cc0c32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/README.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/index.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/lib/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/LICENSE" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/README.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/async.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/async.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/error.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/error.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/promise.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/lib/promise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/package.json" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/har-validator/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/LICENSE" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/README.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/db.json" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/db.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/index.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/package.json" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-db/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/HISTORY.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/HISTORY.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/LICENSE" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/README.md" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/index.js" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/package.json" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/node_modules/mime-types/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/api-base-hvail/package.json" afterPath="$PROJECT_DIR$/node_modules/api-base-hvail/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/psl/data/rules.json" afterPath="$PROJECT_DIR$/node_modules/psl/data/rules.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/psl/dist/psl.js" afterPath="$PROJECT_DIR$/node_modules/psl/dist/psl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/psl/dist/psl.min.js" afterPath="$PROJECT_DIR$/node_modules/psl/dist/psl.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/psl/package.json" afterPath="$PROJECT_DIR$/node_modules/psl/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/psl/yarn.lock" afterPath="$PROJECT_DIR$/node_modules/psl/yarn.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/util/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/util/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/util/package.json" afterPath="$PROJECT_DIR$/node_modules/util/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/util/util.js" afterPath="$PROJECT_DIR$/node_modules/util/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cell.js" afterPath="$PROJECT_DIR$/routes/cell.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -15,46 +47,39 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="redishelp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cell.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/cell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+            <state relative-caret-position="371">
+              <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="geolocation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
+      <file leaf-file-name="GCJ02.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/crs/GCJ02.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+            <state relative-caret-position="360">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
-                <marker date="1555483001238" expanded="true" signature="1397:1695" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1397:1699" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1485:1687" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1508:1552" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1574:1625" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1631:1677" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="1702:2152" ph="//..." />
-                <marker date="1555483001238" expanded="true" signature="2195:3102" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="2317:2395" ph="{&quot;wifi&quot;: reqObj.wifiAccessPoints...}" />
-                <marker date="1555483001238" expanded="true" signature="2455:2793" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="2479:2630" ph="{&quot;id&quot;: rom...}" />
-                <marker date="1555483001238" expanded="true" signature="2825:3098" ph="{...}" />
-                <marker date="1555483001238" expanded="true" signature="2849:2998" ph="{&quot;id&quot;: rom...}" />
+                <marker date="499162500000" expanded="true" signature="539:709" ph="{...}" />
+                <marker date="499162500000" expanded="true" signature="805:960" ph="{...}" />
+                <marker date="499162500000" expanded="true" signature="990:1298" ph="{...}" />
+                <marker date="499162500000" expanded="true" signature="1328:1631" ph="{...}" />
+                <marker date="499162500000" expanded="true" signature="1658:2073" ph="{...}" />
+                <marker date="499162500000" expanded="true" signature="2104:2345" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_modules/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,17 +88,7 @@
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
-              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -82,53 +97,60 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
               <folding>
-                <marker date="1555483000735" expanded="true" signature="224:263" ph="{&quot;api&quot;: api...}" />
+                <marker date="499162500000" expanded="true" signature="531:570" ph="{&quot;api&quot;: api...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/utils.js">
+      <file leaf-file-name="gpsutils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gpsutils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5115">
-              <caret line="341" column="0" lean-forward="false" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+            <state relative-caret-position="1316">
+              <caret line="232" column="17" lean-forward="true" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="apiOffsetFix.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/apiOffsetFix.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-              <folding>
-                <marker date="1555483000594" expanded="true" signature="1291:1369" ph="{...}" />
-                <marker date="1555483000594" expanded="true" signature="1429:1687" ph="{...}" />
-              </folding>
+            <state relative-caret-position="356">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
+        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="218">
+              <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="transform.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/transform.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            <state relative-caret-position="330">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,6 +173,7 @@
       <find>considerIp</find>
       <find>remoteUrl</find>
       <find>getCt</find>
+      <find>WGS84ToGCJ02</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,7 +189,6 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/logger-180426.log" />
         <option value="$PROJECT_DIR$/my_modules/utils.js" />
@@ -177,6 +199,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/routes/cell.js" />
+        <option value="$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/crs/GCJ02.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -198,7 +222,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3278" />
+    <option name="x" value="1358" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -920,10 +944,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82942000" />
+    <option name="totallyTimeSpent" value="85631000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3278" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -983,66 +1007,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.9.3/core-modules/util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="1045" column="19" lean-forward="false" selection-start-line="1045" selection-start-column="19" selection-end-line="1045" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/request/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/request/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="393">
-            <caret line="133" column="3" lean-forward="true" selection-start-line="133" selection-start-column="3" selection-end-line="133" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-          <folding>
-            <marker date="1555483000594" expanded="true" signature="1291:1369" ph="{...}" />
-            <marker date="1555483000594" expanded="true" signature="1429:1687" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1235,21 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_modules/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log/logger-180516.log" />
     <entry file="file://$PROJECT_DIR$/log/logger-180517.log" />
     <entry file="file://$PROJECT_DIR$/log/logger-180829.log" />
@@ -1289,28 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
-          <folding>
-            <marker date="1555483001238" expanded="true" signature="1397:1695" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1397:1699" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1485:1687" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1508:1552" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1574:1625" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1631:1677" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="1702:2152" ph="//..." />
-            <marker date="1555483001238" expanded="true" signature="2195:3102" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="2317:2395" ph="{&quot;wifi&quot;: reqObj.wifiAccessPoints...}" />
-            <marker date="1555483001238" expanded="true" signature="2455:2793" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="2479:2630" ph="{&quot;id&quot;: rom...}" />
-            <marker date="1555483001238" expanded="true" signature="2825:3098" ph="{...}" />
-            <marker date="1555483001238" expanded="true" signature="2849:2998" ph="{&quot;id&quot;: rom...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1318,18 +1245,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1337,15 +1256,112 @@
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_modules/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5115">
+          <caret line="341" column="0" lean-forward="false" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <marker date="499162500000" expanded="true" signature="531:570" ph="{&quot;api&quot;: api...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/apiOffsetFix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/transform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gpsutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1316">
+          <caret line="232" column="17" lean-forward="true" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
+        <state relative-caret-position="371">
+          <caret line="131" column="13" lean-forward="true" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/crs/GCJ02.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <marker date="499162500000" expanded="true" signature="539:709" ph="{...}" />
+            <marker date="499162500000" expanded="true" signature="805:960" ph="{...}" />
+            <marker date="499162500000" expanded="true" signature="990:1298" ph="{...}" />
+            <marker date="499162500000" expanded="true" signature="1328:1631" ph="{...}" />
+            <marker date="499162500000" expanded="true" signature="1658:2073" ph="{...}" />
+            <marker date="499162500000" expanded="true" signature="2104:2345" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
