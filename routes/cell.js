@@ -17,7 +17,8 @@ const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&i
 
 
 let inChina = false;
-const remoteUrl = "http://47.74.41.235:9999/cell/q";
+// const remoteUrl = "http://47.74.41.235:9999/cell/q";
+const remoteUrl = "http://lbs.hvail.com/cell/q";
 if (process.env.DATAAREA === "zh-cn") inChina = true;
 
 const _doTracker = (req, res, next) => {
