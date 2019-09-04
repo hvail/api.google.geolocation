@@ -144,7 +144,7 @@ let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
 
 let _readRemoteCell = (mcc, mnc, lac, cid) => {
     let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
-    console.log(url);
+    console.log(__url);
     return apiUtil.PromiseGet(__url)
         .catch(err => {
             console.log(__url);
