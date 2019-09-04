@@ -211,6 +211,7 @@ const getCt = (req, res) => {
                             _readRemoteCell(mcc, mnc, lac, cid, wifi)
                                 .then((body) => {
                                     console.log(body);
+                                    res.send(body);
                                 });
                         else {
                             res.status(200).send("");
