@@ -97,7 +97,7 @@ const getTz = (req, res) => {
                 });
             });
         } else
-            res.send("")
+            res.send("");
     });
 };
 
@@ -194,9 +194,13 @@ const getCt = (req, res) => {
                     if (!exists)
                         _readRemoteCell(mcc, mnc, lac, cid)
                             .then((body) => {
-                                console.log("body : " + JSON.stringify(body));
-                                // redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
-                                res.send(body);
+                                if (body) {
+                                    console.log(key + " , body : " + JSON.stringify(body));
+                                    // redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
+                                    res.send(body);
+                                } else {
+                                    res.status(200).send("");
+                                }
                             });
                     else {
                         res.status(200).send("");
