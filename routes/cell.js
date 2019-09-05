@@ -161,6 +161,7 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
             console.log(lbs);
             if (lbs.infocode === '10000') {
                 let ls = lbs.result.location.split(",");
+                ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
                 return {
                     "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
                     "latitude": ls[1], "longitude": ls[0], "Signal": -85
