@@ -183,8 +183,7 @@ const getCt = (req, res) => {
     let {wifi} = req.query;
 
     if (wifi)
-        _readRemoteWifi(mcc, mnc, lac, cid, wifi)
-            .then(result => res.send(result));
+        _readRemoteWifi(mcc, mnc, lac, cid, wifi).then(result => res.send(result));
     else
         redis.geopos("CellTowerLocationHash", key, (err, pos) => {
             if (!err && pos[0]) res.send(cellRes(pos[0]));
@@ -194,7 +193,7 @@ const getCt = (req, res) => {
                     if (!exists)
                         _readRemoteCell(mcc, mnc, lac, cid, wifi)
                             .then((body) => {
-                                console.log(body);
+                                // console.log(body);
                                 res.send(body);
                             });
                     else {
