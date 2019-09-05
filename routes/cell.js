@@ -13,7 +13,7 @@ const apiBase = require('api-base-hvail');
 const {util: apiUtil, offset} = apiBase;
 const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&location=%s,%s&timestamp=%s&ak=inl7EljWEdaPIiDKoTHM3Z7QGMOsGTDT";
 const ApiAMapWIFIUrl = "http://apilocate.amap.com/position?accesstype=1&imei=%s&smac=%s&mmac=%s&macs=%s&output=json&key=f332352aef4dd383836978546959d9cd&bts=%s";
-const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&imei=352315052834187&output=json&key=f332352aef4dd383836978546959d9cd&mcc=%s&mnc=%s&lac=%s&cid=%s&signal=-63&bts=%s";
+const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&imei=352315052834187&output=json&key=f332352aef4dd383836978546959d9cd&mcc=%s&mnc=%s&lac=%s&cid=%s&signal=-63&bts=%s,-63";
 
 
 let inChina = false;
