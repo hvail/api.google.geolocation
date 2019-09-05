@@ -182,45 +182,27 @@ const getCt = (req, res) => {
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
 
-    if (!inChina) {
-        _buildWifiBody(mcc, mnc, lac, cid, wifi)
-            .then(obj => {
-                if (obj !== null) {
-                    redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
-                    res.send(cellRes(collBuild(obj)))
-                } else {
-                    let key = `NOFIND_${mcc}:${lac}-${cid}`;
-                    redis.set(key, new Date().getTime() + "");
-                    redis.expire(key, 1800);
-                    redis.hset("FailTowerLocationHash", key, key);
-                    res.send("");
-                }
-            })
-    } else {
-        if (wifi)
-            _readRemoteWifi(mcc, mnc, lac, cid, wifi)
-                .then(result => res.send(result));
-        else
-        // _readRemoteCell(mcc, mnc, lac, cid)
-        //     .then(result => res.send(result));
-            redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-                if (!err && pos[0]) res.send(cellRes(pos[0]));
-                else {
-                    let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
-                    redis.exists(nKey, (err, exists) => {
-                        if (!exists)
-                            _readRemoteCell(mcc, mnc, lac, cid, wifi)
-                                .then((body) => {
-                                    console.log(body);
-                                    res.send(body);
-                                });
-                        else {
-                            res.status(200).send("");
-                        }
-                    });
-                }
-            });
-    }
+    if (wifi)
+        _readRemoteWifi(mcc, mnc, lac, cid, wifi)
+            .then(result => res.send(result));
+    else
+        redis.geopos("CellTowerLocationHash", key, (err, pos) => {
+            if (!err && pos[0]) res.send(cellRes(pos[0]));
+            else {
+                let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
+                redis.exists(nKey, (err, exists) => {
+                    if (!exists)
+                        _readRemoteCell(mcc, mnc, lac, cid, wifi)
+                            .then((body) => {
+                                console.log(body);
+                                res.send(body);
+                            });
+                    else {
+                        res.status(200).send("");
+                    }
+                });
+            }
+        });
 };
 
 let _getTimeByLLC = function (lat, lng, cb) {
