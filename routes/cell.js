@@ -159,7 +159,7 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
         .then(JSON.parse)
         .then(lbs => {
             console.log(lbs);
-            if (lbs.infocode === '10000') {
+            if (lbs.infocode === '10000' && !!lbs.result.location) {
                 let ls = lbs.result.location.split(",");
                 ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
                 return {
