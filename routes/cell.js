@@ -193,8 +193,8 @@ const getCt = (req, res) => {
                     if (!exists)
                         _readRemoteCell(mcc, mnc, lac, cid)
                             .then((body) => {
-                                console.log(body);
-                                redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
+                                console.log("body : " + JSON.stringify(body));
+                                // redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                                 res.send(body);
                             });
                     else {
