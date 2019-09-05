@@ -142,39 +142,39 @@ let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
         });
 };
 
-let _readRemoteCell = (mcc, mnc, lac, cid) => {
-    let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
-    console.log(__url);
-    return apiUtil.PromiseGet(__url)
-        .catch(err => {
-            console.log(__url);
-            console.log(err);
-            return "";
-        });
-};
-
 // let _readRemoteCell = (mcc, mnc, lac, cid) => {
-//     let AMapUrl = util.format(ApiAMapCELLUrl, mcc, mnc, lac, cid, `${mcc},${mnc},${lac},${cid}`);
-//     return apiUtil.PromiseGet(AMapUrl)
-//         .then(JSON.parse)
-//         .then(lbs => {
-//             console.log(lbs);
-//             if (lbs.infocode === '10000') {
-//                 let ls = lbs.result.location.split(",");
-//                 return {
-//                     "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
-//                     "latitude": ls[1], "longitude": ls[0], "Signal": -85
-//                 };
-//             } else {
-//                 return "";
-//             }
-//         })
+//     let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
+//     console.log(__url);
+//     return apiUtil.PromiseGet(__url)
 //         .catch(err => {
-//             console.log(AMapUrl);
+//             console.log(__url);
 //             console.log(err);
 //             return "";
 //         });
 // };
+
+let _readRemoteCell = (mcc, mnc, lac, cid) => {
+    let AMapUrl = util.format(ApiAMapCELLUrl, mcc, mnc, lac, cid, `${mcc},${mnc},${lac},${cid}`);
+    return apiUtil.PromiseGet(AMapUrl)
+        .then(JSON.parse)
+        .then(lbs => {
+            console.log(lbs);
+            if (lbs.infocode === '10000') {
+                let ls = lbs.result.location.split(",");
+                return {
+                    "Latitude": ls[1], "Longitude": ls[0], "Range": lbs.result.radius,
+                    "latitude": ls[1], "longitude": ls[0], "Signal": -85
+                };
+            } else {
+                return "";
+            }
+        })
+        .catch(err => {
+            console.log(AMapUrl);
+            console.log(err);
+            return "";
+        });
+};
 
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
