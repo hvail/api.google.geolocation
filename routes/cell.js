@@ -158,7 +158,8 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
     return apiUtil.PromiseGet(AMapUrl)
         .then(JSON.parse)
         .then(lbs => {
-            console.log(lbs);
+            console.log(AMapUrl);
+            console.log(JSON.stringify(lbs));
             if (lbs.infocode === '10000' && !!lbs.result.location) {
                 let ls = lbs.result.location.split(",");
                 ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
@@ -167,7 +168,7 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
                     "latitude": ls[1], "longitude": ls[0], "Signal": -85
                 };
             } else {
-                return "";
+                return null;
             }
         })
         .catch(err => {
