@@ -191,9 +191,10 @@ const getCt = (req, res) => {
                 let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
                 redis.exists(nKey, (err, exists) => {
                     if (!exists)
-                        _readRemoteCell(mcc, mnc, lac, cid, wifi)
+                        _readRemoteCell(mcc, mnc, lac, cid)
                             .then((body) => {
-                                // console.log(body);
+                                console.log(body);
+                                redis.geoadd("CellTowerLocationHash", obj.lng, obj.lat, key);
                                 res.send(body);
                             });
                     else {
