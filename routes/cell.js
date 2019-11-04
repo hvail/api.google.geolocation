@@ -203,6 +203,7 @@ const getCt = (req, res) => {
                                 }
                             });
                     else {
+                        console.log(key + " not find any");
                         res.status(200).send("");
                     }
                 });
