@@ -188,12 +188,12 @@ const getCt = (req, res) => {
     if (wifi)
         _readRemoteWifi(mcc, mnc, lac, cid, wifi).then(result => res.send(result));
     else {
-        console.log(key + " , body 1: ");
+        // console.log(key + " , body 1: ");
         redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-            console.log(key + " , body 2: ");
+            // console.log(key + " , body 2: ");
             if (!err && pos[0]) res.send(cellRes(pos[0]));
             else {
-                console.log(key + " , body 3: ");
+                // console.log(key + " , body 3: ");
                 let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
                 redis.exists(nKey, (err, exists) => {
                     if (!exists)
@@ -208,7 +208,7 @@ const getCt = (req, res) => {
                                 }
                             });
                     else {
-                        console.log(key + " not find any");
+                        // console.log(key + " not find any");
                         res.status(200).send("");
                     }
                 });
