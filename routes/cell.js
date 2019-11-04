@@ -183,6 +183,8 @@ const getCt = (req, res) => {
     let key = `${mcc}:${lac}-${cid}`;
     let {wifi} = req.query;
 
+    console.log("getCt");
+
     if (wifi)
         _readRemoteWifi(mcc, mnc, lac, cid, wifi).then(result => res.send(result));
     else
