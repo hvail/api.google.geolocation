@@ -197,7 +197,11 @@ const getCt = (req, res) => {
                 if ((mcc * 1) !== 460) {
                     console.log(`未查询到 ${mcc}-${mnc}_${lac}-${cid} 尝试从google获取`);
                     _buildWifiBody(mcc, mnc, lac, cid, null)
-                        .then(location => console.log(location))
+                        .then(location => {
+                            console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
+                            let __lat = location.lat, lng = location.lng;
+                            let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey)
+                        })
                         .catch(e => console.log(`err : ${e}`))
                 }
                 res.status(200).send("");
