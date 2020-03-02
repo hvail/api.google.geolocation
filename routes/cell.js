@@ -194,7 +194,10 @@ const getCt = (req, res) => {
         redis.geopos(`${mcc}.${mnc}`, nKey, (err, pos) => {
             if (!err && pos[0]) res.send(cellRes(pos[0]));
             else {
-                if ((mcc * 1) !== 460) {
+                if (mcc === 0) {
+                    console.log(`${mcc}-${mnc}_${lac}-${cid} 非法基站信息`);
+                    res.status(200).send("");
+                } else if ((mcc * 1) !== 460) {
                     // console.log(`未查询到 ${mcc}-${mnc}_${lac}-${cid} 尝试从google获取`);
                     _buildWifiBody(mcc, mnc, lac, cid, null)
                         .then(location => {
