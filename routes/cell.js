@@ -71,8 +71,8 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
             result.wifiAccessPoints.push({macAddress: w, signalStrength: -80, channel: 0});
         });
     }
-    console.log(url);
-    console.log(result);
+    // console.log(url);
+    // console.log(result);
     return apiUtil.PromisePost(url, result)
         .then(obj => {
             if (obj.error) {
@@ -200,11 +200,16 @@ const getCt = (req, res) => {
                         .then(location => {
                             console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
                             let __lat = location.lat, __lng = location.lng;
-                            let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey)
+                            let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey);
+                            res.status(200).send(cellRes([location.lng, location.lat]));
                         })
-                        .catch(e => console.log(`err : ${e}`))
+                        .catch(e => {
+                            console.log(`err : ${e}`);
+                            res.status(200).send("");
+                        })
+                } else {
+                    res.status(200).send("");
                 }
-                res.status(200).send("");
             }
         })
         // console.log(key + " , body 1: ");
