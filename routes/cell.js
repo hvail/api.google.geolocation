@@ -15,7 +15,6 @@ const base_url = "http://api.map.baidu.com/timezone/v1?coord_type=wgs84ll&locati
 const ApiAMapWIFIUrl = "http://apilocate.amap.com/position?accesstype=1&imei=%s&smac=%s&mmac=%s&macs=%s&output=json&key=f332352aef4dd383836978546959d9cd&bts=%s";
 const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&imei=352315052834187&output=json&key=f332352aef4dd383836978546959d9cd&mcc=%s&mnc=%s&lac=%s&cid=%s&signal=-63&bts=%s,-63";
 
-
 let inChina = false;
 // const remoteUrl = "http://47.74.41.235:9999/cell/q";
 const remoteUrl = "http://lbs.hvail.com/cell/q";
@@ -158,8 +157,8 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
     return apiUtil.PromiseGet(AMapUrl)
         .then(JSON.parse)
         .then(lbs => {
-            console.log(AMapUrl);
-            console.log(JSON.stringify(lbs));
+            // console.log(AMapUrl);
+            // console.log(JSON.stringify(lbs));
             if (lbs.infocode === '10000' && !!lbs.result.location) {
                 let ls = lbs.result.location.split(",");
                 ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
@@ -181,39 +180,41 @@ let _readRemoteCell = (mcc, mnc, lac, cid) => {
 const getCt = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
+    let nKey = `${lac}-${cid}`;
     let {wifi} = req.query;
-
-    console.log("getCt");
-
     if (wifi)
         _readRemoteWifi(mcc, mnc, lac, cid, wifi).then(result => res.send(result));
     else {
-        // console.log(key + " , body 1: ");
-        redis.geopos("CellTowerLocationHash", key, (err, pos) => {
-            // console.log(key + " , body 2: ");
+        redis.geopos(`${mcc}.${mnc}`, nKey, (err, pos) => {
             if (!err && pos[0]) res.send(cellRes(pos[0]));
-            else {
-                // console.log(key + " , body 3: ");
-                let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
-                redis.exists(nKey, (err, exists) => {
-                    if (!exists)
-                        _readRemoteCell(mcc, mnc, lac, cid)
-                            .then((body) => {
-                                if (body) {
-                                    console.log(key + " , body : " + body.longitude + "," + body.latitude);
-                                    redis.geoadd("CellTowerLocationHash", body.longitude, body.latitude, key);
-                                    res.send(body);
-                                } else {
-                                    res.status(200).send("");
-                                }
-                            });
-                    else {
-                        // console.log(key + " not find any");
-                        res.status(200).send("");
-                    }
-                });
-            }
-        });
+            else res.status(200).send("");
+        })
+        // console.log(key + " , body 1: ");
+        // redis.geopos("CellTowerLocationHash", key, (err, pos) => {
+        //     // console.log(key + " , body 2: ");
+        //     if (!err && pos[0]) res.send(cellRes(pos[0]));
+        //     else {
+        //         // console.log(key + " , body 3: ");
+        //         let nKey = `NOFIND_${mcc}:${lac}-${cid}`;
+        //         redis.exists(nKey, (err, exists) => {
+        //             if (!exists)
+        //                 _readRemoteCell(mcc, mnc, lac, cid)
+        //                     .then((body) => {
+        //                         if (body) {
+        //                             console.log(key + " , body : " + body.longitude + "," + body.latitude);
+        //                             redis.geoadd("CellTowerLocationHash", body.longitude, body.latitude, key);
+        //                             res.send(body);
+        //                         } else {
+        //                             res.status(200).send("");
+        //                         }
+        //                     });
+        //             else {
+        //                 // console.log(key + " not find any");
+        //                 res.status(200).send("");
+        //             }
+        //         });
+        //     }
+        // });
     }
 };
 

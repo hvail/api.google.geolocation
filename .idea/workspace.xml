@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d22031-3e0e-42e8-8598-7a7297cc0c32" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/redis-commands/.travis.yml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_modules/redishelp.js" afterPath="$PROJECT_DIR$/my_modules/redishelp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/LICENSE" afterPath="$PROJECT_DIR$/node_modules/redis-commands/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/README.md" afterPath="$PROJECT_DIR$/node_modules/redis-commands/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/changelog.md" afterPath="$PROJECT_DIR$/node_modules/redis-commands/changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/commands.json" afterPath="$PROJECT_DIR$/node_modules/redis-commands/commands.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/index.js" afterPath="$PROJECT_DIR$/node_modules/redis-commands/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis-commands/package.json" afterPath="$PROJECT_DIR$/node_modules/redis-commands/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/.eslintignore" afterPath="$PROJECT_DIR$/node_modules/redis/.eslintignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/.eslintrc" afterPath="$PROJECT_DIR$/node_modules/redis/.eslintrc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/.npmignore" afterPath="$PROJECT_DIR$/node_modules/redis/.npmignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/LICENSE" afterPath="$PROJECT_DIR$/node_modules/redis/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/README.md" afterPath="$PROJECT_DIR$/node_modules/redis/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/changelog.md" afterPath="$PROJECT_DIR$/node_modules/redis/changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/index.js" afterPath="$PROJECT_DIR$/node_modules/redis/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/command.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/command.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/commands.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/commands.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/createClient.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/createClient.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/customErrors.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/customErrors.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/debug.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/debug.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/extendedApi.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/extendedApi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/individualCommands.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/individualCommands.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/multi.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/multi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/lib/utils.js" afterPath="$PROJECT_DIR$/node_modules/redis/lib/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/redis/package.json" afterPath="$PROJECT_DIR$/node_modules/redis/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cell.js" afterPath="$PROJECT_DIR$/routes/cell.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,11 +42,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cell.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/cell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="196" column="57" lean-forward="true" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="57" />
+            <state relative-caret-position="220">
+              <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -29,8 +55,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="-165">
+              <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -46,21 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <file leaf-file-name="redishelp.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redishelp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
+      <file leaf-file-name="www" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -79,8 +105,8 @@
       <file leaf-file-name="geolocation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="180">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -99,8 +125,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -109,8 +135,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -157,7 +183,6 @@
         <option value="$PROJECT_DIR$/my_modules/utils.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/geolocation.js" />
-        <option value="$PROJECT_DIR$/my_modules/redishelp.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/node_modules/api-base-hvail/lib/gcoord/crs/GCJ02.js" />
@@ -165,6 +190,7 @@
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/routes/cell.js" />
+        <option value="$PROJECT_DIR$/my_modules/redishelp.js" />
       </list>
     </option>
   </component>
@@ -207,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,9 +290,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,7 +305,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.9.3" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ShenZhenStamp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -908,12 +934,16 @@
       <workItem from="1567568948985" duration="148000" />
       <workItem from="1567569367198" duration="13299000" />
       <workItem from="1567655334394" duration="2259000" />
-      <workItem from="1572861018028" duration="3460000" />
+      <workItem from="1572861018028" duration="4058000" />
+      <workItem from="1574222892802" duration="1198000" />
+      <workItem from="1582179919413" duration="1712000" />
+      <workItem from="1583075545677" duration="606000" />
+      <workItem from="1583112609629" duration="1814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122145000" />
+    <option name="totallyTimeSpent" value="128073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
@@ -925,8 +955,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -935,7 +965,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5780089" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5777778" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1168,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/apiOffsetFix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1210,14 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1242,22 +1257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="25" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/api-base-hvail/lib/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3870">
@@ -1266,26 +1265,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/geolocation.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/cell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="196" column="57" lean-forward="true" selection-start-line="196" selection-start-column="57" selection-end-line="196" selection-end-column="57" />
+        <state relative-caret-position="220">
+          <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_modules/redishelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding />
         </state>
       </provider>
