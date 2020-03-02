@@ -3,8 +3,8 @@
 const redis_host = process.env.REDIS_HOST || "localhost";
 const redis_pwd = process.env.REDIS_PASSWORD || "abcdefg";
 const redis_port = process.env.REDIS_PORT || 6379;
-// const redis_host = "_celltower.redis.rds.aliyuncs.com";
-// const redis_pwd = "hyz2020";
+// const redis_host = "celltower.redis.rds.aliyuncs.com";
+// const redis_pwd = "hyz@2020";
 // const redis_port = 6379;
 const redis = require('redis');
 let redisClient;

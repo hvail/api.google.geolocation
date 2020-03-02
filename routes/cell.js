@@ -195,13 +195,18 @@ const getCt = (req, res) => {
             if (!err && pos[0]) res.send(cellRes(pos[0]));
             else {
                 if ((mcc * 1) !== 460) {
-                    console.log(`未查询到 ${mcc}-${mnc}_${lac}-${cid} 尝试从google获取`);
+                    // console.log(`未查询到 ${mcc}-${mnc}_${lac}-${cid} 尝试从google获取`);
                     _buildWifiBody(mcc, mnc, lac, cid, null)
                         .then(location => {
-                            console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
-                            let __lat = location.lat, __lng = location.lng;
-                            let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey);
-                            res.status(200).send(cellRes([location.lng, location.lat]));
+                            if (location === null) {
+                                console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取失败`);
+                                res.status(200).send("");
+                            } else {
+                                console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
+                                let __lat = location.lat, __lng = location.lng;
+                                let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey);
+                                res.status(200).send(cellRes([location.lng, location.lat]));
+                            }
                         })
                         .catch(e => {
                             console.log(`err : ${e}`);
