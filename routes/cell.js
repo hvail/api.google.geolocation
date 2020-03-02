@@ -199,7 +199,7 @@ const getCt = (req, res) => {
                     _buildWifiBody(mcc, mnc, lac, cid, null)
                         .then(location => {
                             console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
-                            let __lat = location.lat, lng = location.lng;
+                            let __lat = location.lat, __lng = location.lng;
                             let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey)
                         })
                         .catch(e => console.log(`err : ${e}`))
