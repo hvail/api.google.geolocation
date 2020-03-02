@@ -3,8 +3,9 @@
  */
 const key = process.env.GOOGLE_KEY || "";
 const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=' + key;
+// const url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCaMLm93WVAmDu6rQIVKiJuTgynabhKSAg';
 const express = require('express');
-const request = require('request');
+let request = require('request');
 const util = require('util');
 const redis = require('./../my_modules/redishelp');
 const router = express.Router();
@@ -18,7 +19,10 @@ const ApiAMapCELLUrl = "http://apilocate.amap.com/position?accesstype=0&cdma=0&i
 let inChina = false;
 // const remoteUrl = "http://47.74.41.235:9999/cell/q";
 const remoteUrl = "http://lbs.hvail.com/cell/q";
-if (process.env.DATAAREA === "zh-cn") inChina = true;
+if (process.env.DATAAREA === "zh-cn") {
+    inChina = true;
+    request = request.defaults({'proxy': 'http://127.0.0.1:1080'});
+}
 
 const _doTracker = (req, res, next) => {
     // 暂时中止回收设备上传的基站位置
@@ -67,6 +71,8 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
             result.wifiAccessPoints.push({macAddress: w, signalStrength: -80, channel: 0});
         });
     }
+    console.log(url);
+    console.log(result);
     return apiUtil.PromisePost(url, result)
         .then(obj => {
             if (obj.error) {
@@ -187,7 +193,15 @@ const getCt = (req, res) => {
     else {
         redis.geopos(`${mcc}.${mnc}`, nKey, (err, pos) => {
             if (!err && pos[0]) res.send(cellRes(pos[0]));
-            else res.status(200).send("");
+            else {
+                if ((mcc * 1) !== 460) {
+                    console.log(`未查询到 ${mcc}-${mnc}_${lac}-${cid} 尝试从google获取`);
+                    _buildWifiBody(mcc, mnc, lac, cid, null)
+                        .then(location => console.log(location))
+                        .catch(e => console.log(`err : ${e}`))
+                }
+                res.status(200).send("");
+            }
         })
         // console.log(key + " , body 1: ");
         // redis.geopos("CellTowerLocationHash", key, (err, pos) => {
