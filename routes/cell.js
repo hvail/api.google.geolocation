@@ -56,6 +56,7 @@ const collBuild = (geo) => {
     return [geo.lng, geo.lat];
 };
 
+// 访问google基站库
 const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
     let result = {considerIp: "false", radioType: "gsm", wifiAccessPoints: [], cellTowers: []};
     result.cellTowers.push({
@@ -71,8 +72,6 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
             result.wifiAccessPoints.push({macAddress: w, signalStrength: -80, channel: 0});
         });
     }
-    // console.log(url);
-    // console.log(result);
     return apiUtil.PromisePost(url, result)
         .then(obj => {
             if (obj.error) {
@@ -86,6 +85,11 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
         .catch(err => {
             console.log(err);
         });
+};
+
+// 访问AMap基站库
+const _buildAMapBody = function (mcc, mnc, lac, cid, wifi) {
+
 };
 
 const getTz = (req, res) => {
@@ -205,7 +209,7 @@ const getCt = (req, res) => {
                                 console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取失败`);
                                 res.status(200).send("");
                             } else {
-                                console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
+                                // console.log(`${mcc}-${mnc}_${lac}-${cid} 从google获取成功 : ${JSON.stringify(location)}`);
                                 let __lat = location.lat, __lng = location.lng;
                                 let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey);
                                 res.status(200).send(cellRes([location.lng, location.lat]));
@@ -215,6 +219,14 @@ const getCt = (req, res) => {
                             console.log(`err : ${e}`);
                             res.status(200).send("");
                         })
+                } else if ((mcc * 1) === 460) {
+                    console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库`);
+                    _readRemoteWifi(mcc, mnc, lac, cid, wifi)
+                        .then(result => {
+                            console.log(result);
+                            return result;
+                        })
+                        .then(result => res.send(result));
                 } else {
                     res.status(200).send("");
                 }
