@@ -88,10 +88,32 @@ const _buildWifiBody = function (mcc, mnc, lac, cid, wifi) {
 };
 
 // 访问AMap基站库
-const _buildAMapBody = function (mcc, mnc, lac, cid, wifi) {
-
+const _buildAMapBody = function (mcc, mnc, lac, cid) {
+    let AMapUrl = util.format(ApiAMapCELLUrl, mcc, mnc, lac, cid, `${mcc},${mnc},${lac},${cid}`);
+    return apiUtil.PromiseGet(AMapUrl)
+        .then(JSON.parse)
+        .then(lbs => {
+            if (lbs.infocode === '10000' && !!lbs.result.location) {
+                let ls = lbs.result.location.split(",");
+                ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
+                return {
+                    "Latitude": ls[1].toFixed(6), "Longitude": ls[0].toFixed(6), "Range": lbs.result.radius,
+                    "latitude": ls[1].toFixed(6), "longitude": ls[0].toFixed(6), "Signal": -85
+                };
+            } else {
+                console.log(AMapUrl);
+                console.log(JSON.stringify(lbs));
+                return null;
+            }
+        })
+        .catch(err => {
+            console.log(AMapUrl);
+            console.log(err);
+            return "";
+        });
 };
 
+// 读取时区信息
 const getTz = (req, res) => {
     let {mcc, mnc, lac, cid} = req.params;
     let key = `${mcc}:${lac}-${cid}`;
@@ -124,6 +146,7 @@ const total = (req, res, next) => {
     });
 };
 
+// 从AMAP中读取WIFI数据
 let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
     let ws = wifi.split(",");
     let AMapUrl = util.format(ApiAMapWIFIUrl, ws[0], ws[1], ws[2], ws.join("|"), `${mcc},${mnc},${lac},${cid}`);
@@ -142,42 +165,6 @@ let _readRemoteWifi = (mcc, mnc, lac, cid, wifi) => {
                 // return result;
             } else {
                 return "";
-            }
-        })
-        .catch(err => {
-            console.log(AMapUrl);
-            console.log(err);
-            return "";
-        });
-};
-
-// let _readRemoteCell = (mcc, mnc, lac, cid) => {
-//     let __url = `${remoteUrl}/${mcc}/${mnc}/${lac}/${cid}`;
-//     console.log(__url);
-//     return apiUtil.PromiseGet(__url)
-//         .catch(err => {
-//             console.log(__url);
-//             console.log(err);
-//             return "";
-//         });
-// };
-
-let _readRemoteCell = (mcc, mnc, lac, cid) => {
-    let AMapUrl = util.format(ApiAMapCELLUrl, mcc, mnc, lac, cid, `${mcc},${mnc},${lac},${cid}`);
-    return apiUtil.PromiseGet(AMapUrl)
-        .then(JSON.parse)
-        .then(lbs => {
-            if (lbs.infocode === '10000' && !!lbs.result.location) {
-                let ls = lbs.result.location.split(",");
-                ls = offset.gg_to_wgs84({Lat: ls[1] * 1, Lng: ls[0] * 1});
-                return {
-                    "Latitude": ls[1].toFixed(6), "Longitude": ls[0].toFixed(6), "Range": lbs.result.radius,
-                    "latitude": ls[1].toFixed(6), "longitude": ls[0].toFixed(6), "Signal": -85
-                };
-            } else {
-                console.log(AMapUrl);
-                console.log(JSON.stringify(lbs));
-                return null;
             }
         })
         .catch(err => {
@@ -220,9 +207,9 @@ const getCt = (req, res) => {
                             res.status(200).send("");
                         })
                 } else if ((mcc * 1) === 460) {
-                    _readRemoteCell(mcc, mnc, lac, cid, wifi)
+                    _buildAMapBody(mcc, mnc, lac, cid, wifi)
                         .then(result => {
-                            console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库 ${result}`);
+                            console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库 ${JSON.stringify(result)}`);
                             return result;
                         })
                         .then(result => res.send(result));
