@@ -221,7 +221,7 @@ const getCt = (req, res) => {
                         })
                 } else if ((mcc * 1) === 460) {
                     console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库`);
-                    _readRemoteWifi(mcc, mnc, lac, cid, wifi)
+                    _readRemoteCell(mcc, mnc, lac, cid, wifi)
                         .then(result => {
                             console.log(result);
                             return result;
