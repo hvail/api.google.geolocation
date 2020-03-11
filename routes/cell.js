@@ -209,7 +209,11 @@ const getCt = (req, res) => {
                 } else if ((mcc * 1) === 460) {
                     _buildAMapBody(mcc, mnc, lac, cid, wifi)
                         .then(result => {
-                            console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库 ${JSON.stringify(result)}`);
+                            if (result !== null) {
+                                let __lat = result.Latitude, __lng = result.Longitude;
+                                let gadd = redis.geoadd(`${mcc}.${mnc}`, __lng, __lat, nKey);
+                                console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库 ${JSON.stringify(result)}-> ${gadd}`);
+                            }
                             return result;
                         })
                         .then(result => res.send(result));
