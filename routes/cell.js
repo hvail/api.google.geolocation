@@ -220,10 +220,9 @@ const getCt = (req, res) => {
                             res.status(200).send("");
                         })
                 } else if ((mcc * 1) === 460) {
-                    console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库`);
                     _readRemoteCell(mcc, mnc, lac, cid, wifi)
                         .then(result => {
-                            console.log(result);
+                            console.log(`${mcc}-${mnc}_${lac}-${cid} 国内基站信息，使用高德基站库 ${result}`);
                             return result;
                         })
                         .then(result => res.send(result));
